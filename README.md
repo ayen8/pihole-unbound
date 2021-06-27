@@ -24,14 +24,14 @@ Google Ubuntu: How To Free Up Port 53, Used By systemd-resolved
 ## Usage
 
 
-### Clone this repository
+### Step 1: Clone this repository
 
 Login to your Raspberry Pi 4B as ubuntu
 
     git clone https://github.com/ayen8/pihole-unbound.git
 
 
-### Create .env file for environment variables
+### Step 2: Create .env file for environment variables
 
 For example:
 
@@ -57,7 +57,7 @@ REV_SERVER_CIDR=10.0.0.0/8
 > Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for environment variable definitions.
 
 
-### Run the stack
+### Step 3: Run the stack
 
 ```bash
 docker-compose up -d
