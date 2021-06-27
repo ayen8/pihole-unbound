@@ -1,4 +1,4 @@
-# Pi-hole and Unbound in 1 Container
+# Pi-hole and Unbound in one Container
 
 
 ## Description
@@ -53,6 +53,8 @@ REV_SERVER_DOMAIN=home.lan
 REV_SERVER_TARGET=10.0.0.1
 REV_SERVER_CIDR=10.0.0.0/8
 ```
+
+> Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for environment variable definitions.
 
 
 ### Run the stack
