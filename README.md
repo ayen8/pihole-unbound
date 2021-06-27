@@ -64,7 +64,7 @@ docker build -t ayen8/pihole-unbound .
 ```
 
 
-### Step 3: Run the stack
+### Step 4: Run the stack
 
 ```bash
 docker-compose up -d
