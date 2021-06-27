@@ -12,9 +12,9 @@ This is mostly to free up port 80 for later use.
 
 1. This was tested only on a Raspberry Pi 4B under Ubuntu 20.04 LTS. If you have the same setup then this may be helpful.
 
-2. Configure a static IP address for your pi manually or in via a static mapping in your router.
+2. Configure a static IP address for your pi.
 
-3. Free up port 53 on the pi
+3. Free up port 53
 
 [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
@@ -63,12 +63,12 @@ sysctl -w net.core.wmem_max=8388608
 
 ### Step 1: Clone this repository
 
-ssh to your Raspberry Pi 4B as ubuntu and run the following:
+ssh to your Raspberry Pi as ubuntu and run the following:
 
     git clone https://github.com/ayen8/pihole-unbound.git
 
 
-### Step 2: Create .env file for environment variables
+### Step 2: Create an .env file for environment variables
 
 For example:
 
