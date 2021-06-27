@@ -91,7 +91,20 @@ REV_SERVER_TARGET=10.0.0.1
 REV_SERVER_CIDR=10.0.0.0/8
 ```
 
-> Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for environment variable definitions.
+> The important environment variables are:
+
+| Environment Var | Description|
+| --- | --- |
+| `ServerIP`<br/> | Your Host IP address
+| `TZ`<br/> | Set your [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+| `WEBPASSWORD`<br/> | Your elected password to login to Pi-hole.
+| `REV_SERVER`<br/> | Enable DNS conditional forwarding for device name resolution. "true" or "false"
+| `REV_SERVER_DOMAIN`<br/> | If conditional forwarding is enabled, set to the domain of the local network router
+| `REV_SERVER_TARGET`<br/> | If conditional forwarding is enabled, set IP to the local network router
+| `REV_SERVER_CIDR`<br/>| If conditional forwarding is enabled, set the reverse DNS zone (e.g. `10.0.0.0/8`)
+
+
+> Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for the complete environment variable definitions.
 
 
 ### Step 3: Build docker image
