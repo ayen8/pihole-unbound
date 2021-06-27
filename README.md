@@ -3,20 +3,20 @@
 
 ## Description
 
-This Docker runs Pi-hole and Unbound in a single docker container as opposed to bare-metal in Raspberry Pi/Ubuntu 20.04.
+This Docker runs Pi-hole and Unbound in a single container as opposed to bare-metal on Raspberry Pi/Ubuntu 20.04LTS.
 
 This is mostly to free up port 80 for later use.
 
 
 ## Prerequisites
 
-1. Tested only on a Raspberry Pi 4B under Ubuntu 20.04 LTS
+1. This was tested only on a Raspberry Pi 4B under Ubuntu 20.04 LTS. If you have the same setup then this may be helpful.
 
-2. Static IP Address has been setup
+2. Configure a static IP address for your pi manually or in via a static mapping in your router.
 
-3. Port 53 has been freed up
+3. Free up port 53 on the pi
 
-Google [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
+[Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
 My /etc/systemd/resolved.conf is:
 
@@ -34,11 +34,27 @@ DNSStubListener=no
 #ReadEtcHosts=yes
 ```
 
-4. /etc/resolv.conf has been setup with your favorite DNS for internet access
+4. Configure /etc/resolv.conf with your favorite DNS for internet access.
 
 ```
 nameserver 208.67.222.222
 nameserver 208.67.220.220
+```
+
+5. Configure Linux parameters in /etc/sysctl.conf and reboot.
+
+Check below parameters. Add if missing. Update values if lesser.
+
+```
+net.core.rmem_max=8388608
+net.core.wmem_max=8388608
+```
+
+You may run below to increase values without rebooting. But this will not be saved on reboot.
+
+```
+sysctl -w net.core.rmem_max=8388608  
+sysctl -w net.core.wmem_max=8388608
 ```
 
 
@@ -47,7 +63,7 @@ nameserver 208.67.220.220
 
 ### Step 1: Clone this repository
 
-Login to your Raspberry Pi 4B as ubuntu
+ssh to your Raspberry Pi 4B as ubuntu and run the following:
 
     git clone https://github.com/ayen8/pihole-unbound.git
 
