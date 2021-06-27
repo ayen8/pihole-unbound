@@ -57,6 +57,13 @@ REV_SERVER_CIDR=10.0.0.0/8
 > Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for environment variable definitions.
 
 
+### Step 3: Build docker image
+
+```bash
+docker build -t ayen8/pihole-unbound .
+```
+
+
 ### Step 3: Run the stack
 
 ```bash
