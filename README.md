@@ -10,15 +10,36 @@ This is mostly to free up port 80 for later use.
 
 ## Prerequisites
 
-Tested only on a Raspberry Pi 4B / Ubuntu 20.04 LTS
+1. Tested only on a Raspberry Pi 4B under Ubuntu 20.04 LTS
 
-Static IP Address has been setup
+2. Static IP Address has been setup
 
-/etc/resolv.conf has been setup to have cloudflare DNS for internet access
+3. Port 53 has been freed up
 
-Port 53 has been freed up
+Google [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
-Google Ubuntu: How To Free Up Port 53, Used By systemd-resolved
+My /etc/systemd/resolved.conf is:
+
+```
+[Resolve]
+#DNS=
+#FallbackDNS=
+#Domains=
+#LLMNR=no
+#MulticastDNS=no
+#DNSSEC=no
+#DNSOverTLS=no
+#Cache=no-negative
+DNSStubListener=no
+#ReadEtcHosts=yes
+```
+
+4. /etc/resolv.conf has been setup with your favorite DNS for internet access
+
+```
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+```
 
 
 ## Usage
