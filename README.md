@@ -45,14 +45,16 @@ nameserver 208.67.222.222
 nameserver 208.67.220.220
 ```
 
-4. Configure Linux parameters in `/etc/sysctl.conf` and reboot.
+4. (Optional/Recommended) Configure Linux parameters.
 
-Check below parameters. Add if missing. Update values if lesser.
+Check parameters in `/etc/sysctl.conf`
 
 ```
 net.core.rmem_max=8388608
 net.core.wmem_max=8388608
 ```
+
+Add lines if missing. Update values only if lesser. Reboot to enable the new values.
 
 You may run below to increase values without rebooting. But this will not be saved on reboot.
 
