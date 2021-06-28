@@ -3,18 +3,20 @@
 
 ## Description
 
-This Docker runs Pi-hole and Unbound in a single container as opposed to bare-metal on Raspberry Pi/Ubuntu 20.04LTS.
+This Docker runs Pi-hole and Unbound in a single container.
 
-This is mostly to free up port 80/443 for later use.
+This is mostly to free up port 80/443 in the host for later use.
 
 
 ## Prerequisites
 
-1. This was tested only on a Raspberry Pi 4B under Ubuntu 20.04 LTS. If you have the same setup then this may be helpful.
+This was tested only on a `Raspberry Pi 4B` under `Ubuntu 20.04 LTS`. 
 
-2. Configure a static IP address for your pi.
+If you have the same setup then this may be helpful.
 
-3. Free up port 53
+1. Configure a static IP address for the pi/Host.
+
+2. Free up port 53.
 
 [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
@@ -34,14 +36,16 @@ DNSStubListener=no
 #ReadEtcHosts=yes
 ```
 
-4. Configure `/etc/resolv.conf` with your favorite DNS for internet access.
+3. Configure internet access for the host.
+
+In my case, needed to set my chosen nameserver in `/etc/resolv.conf`.
 
 ```
 nameserver 208.67.222.222
 nameserver 208.67.220.220
 ```
 
-5. Configure Linux parameters in `/etc/sysctl.conf` and reboot.
+4. Configure Linux parameters in `/etc/sysctl.conf` and reboot.
 
 Check below parameters. Add if missing. Update values if lesser.
 
