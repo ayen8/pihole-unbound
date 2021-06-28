@@ -105,7 +105,7 @@ REV_SERVER_CIDR=10.0.0.0/8
 
 | Docker Environment Var. | Description |
 | ----------------------- | ----------- |
-| `ServerIP: <Host's IP>`<br/> **Recommended** | **--net=host mode requires** Set to your server's LAN IP, used by web block modes and lighttpd bind address
+| `ServerIP: <Host's IP>`<br/> | Set to your Host server's Static IP address.
 | `TZ`<br/> | Set your [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 | `WEBPASSWORD`<br/> | Your elected password to login to Pi-hole.
 | `REV_SERVER: <"true"\|"false">`<br/> *Optional* *Default: "false"* | Enable DNS conditional forwarding for device name resolution
