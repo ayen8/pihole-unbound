@@ -117,6 +117,8 @@ REV_SERVER_CIDR=10.0.0.0/8
 
 ### Step 3: Build docker image
 
+> You should be in the `pihole-unbound` directory which contains the .env and docker-compose.yaml files.
+
 ```bash
 docker build -t ayen8/pihole-unbound .
 ```
