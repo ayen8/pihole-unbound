@@ -125,7 +125,7 @@ docker-compose up -d
 
 ### Step 5: Test your installation
 
-Update your DNS settings to point to ServerIP.
+Update your computer/router DNS settings to point to ServerIP.
 
 Check Pi-hole by going to http://ServerIP:YourPort/admin
 
