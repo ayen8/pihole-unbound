@@ -133,7 +133,7 @@ docker-compose up -d
 
 ### Step 5: Test your installation
 
-Configure your computer/router DNS settings to point to Host ServerIP.
+Configure your computer DNS settings to point to Host ServerIP. For whole home setting, this needs to be configured in your router.
 
 Go to the Pi-hole admin page at http://ServerIP:YourPort/admin
 
