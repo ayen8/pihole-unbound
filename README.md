@@ -5,7 +5,7 @@
 
 This Docker runs Pi-hole and Unbound in a single container as opposed to bare-metal on Raspberry Pi/Ubuntu 20.04LTS.
 
-This is mostly to free up port 80 for later use.
+This is mostly to free up port 80/443 for later use.
 
 
 ## Prerequisites
