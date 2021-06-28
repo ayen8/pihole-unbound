@@ -14,7 +14,7 @@ This was tested only on a `Raspberry Pi 4B` under `Ubuntu 20.04 LTS`.
 
 If you have the same setup then this may be helpful.
 
-1. Configure a static IP address for the pi/Host.
+1. Configure a static IP address for the Host.
 
 2. Free up port 53.
 
@@ -36,7 +36,7 @@ DNSStubListener=no
 #ReadEtcHosts=yes
 ```
 
-3. Configure internet access for the host.
+3. Configure internet access for the Host.
 
 In my case, needed to set my chosen nameserver in `/etc/resolv.conf`.
 
@@ -45,7 +45,7 @@ nameserver 208.67.222.222
 nameserver 208.67.220.220
 ```
 
-4. (Optional/Recommended) Configure Linux parameters.
+4. (Optional/Recommended) Configure Host Linux parameters.
 
 Check parameters in `/etc/sysctl.conf`
 
