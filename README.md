@@ -18,7 +18,7 @@ This is mostly to free up port 80/443 for later use.
 
 [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
-My /etc/systemd/resolved.conf is:
+My `/etc/systemd/resolved.conf` is:
 
 ```
 [Resolve]
@@ -34,14 +34,14 @@ DNSStubListener=no
 #ReadEtcHosts=yes
 ```
 
-4. Configure /etc/resolv.conf with your favorite DNS for internet access.
+4. Configure `/etc/resolv.conf` with your favorite DNS for internet access.
 
 ```
 nameserver 208.67.222.222
 nameserver 208.67.220.220
 ```
 
-5. Configure Linux parameters in /etc/sysctl.conf and reboot.
+5. Configure Linux parameters in `/etc/sysctl.conf` and reboot.
 
 Check below parameters. Add if missing. Update values if lesser.
 
@@ -95,15 +95,15 @@ REV_SERVER_CIDR=10.0.0.0/8
 
 > The important environment variables are:
 
-| Environment Var | Description|
-| --- | --- |
-| `ServerIP`<br/> | Your Host IP address
+| Docker Environment Var. | Description |
+| ----------------------- | ----------- |
+| `ServerIP: <Host's IP>`<br/> **Recommended** | **--net=host mode requires** Set to your server's LAN IP, used by web block modes and lighttpd bind address
 | `TZ`<br/> | Set your [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 | `WEBPASSWORD`<br/> | Your elected password to login to Pi-hole.
-| `REV_SERVER`<br/> | Enable DNS conditional forwarding for device name resolution. "true" or "false"
-| `REV_SERVER_DOMAIN`<br/> | If conditional forwarding is enabled, set to the domain of the local network router
-| `REV_SERVER_TARGET`<br/> | If conditional forwarding is enabled, set IP to the local network router
-| `REV_SERVER_CIDR`<br/>| If conditional forwarding is enabled, set the reverse DNS zone (e.g. `10.0.0.0/8`)
+| `REV_SERVER: <"true"\|"false">`<br/> *Optional* *Default: "false"* | Enable DNS conditional forwarding for device name resolution
+| `REV_SERVER_DOMAIN: <Network Domain>`<br/> *Optional* | If conditional forwarding is enabled, set the domain of the local network router
+| `REV_SERVER_TARGET: <Router's IP>`<br/> *Optional* | If conditional forwarding is enabled, set the IP of the local network router
+| `REV_SERVER_CIDR: <Reverse DNS>`<br/> *Optional* | If conditional forwarding is enabled, set the reverse DNS zone (e.g. `192.168.0.0/24`)
 
 
 > Checkout the [official pihole container](https://github.com/pi-hole/docker-pi-hole/) for the complete environment variable definitions.
