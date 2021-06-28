@@ -76,7 +76,9 @@ For example:
     vi .env
 
 
-add the following:
+Add the following environment variables and provide appropriate values for your network.
+
+> Sample below. 
 
 ```
 ServerIP=10.0.0.9
@@ -120,3 +122,11 @@ docker build -t ayen8/pihole-unbound .
 docker-compose up -d
 ```
 
+
+### Step 5: Test your installation
+
+Update your DNS settings to point to <ServerIP>.
+
+Check Pi-hole by going to http://<ServerIP>:<Chosen Port>/admin
+
+Test various websites to see if ads are removed.
