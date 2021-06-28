@@ -8,7 +8,7 @@ volumes:
 services:
   pihole:
     container_name: pihole-unbound
-    image: ayen/pihole-unbound:latest
+    image: ayen8/pihole-unbound:latest
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
     ports:
