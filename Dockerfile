@@ -1,4 +1,5 @@
-FROM pihole/pihole:v5.8.1
+FROM pihole/pihole:latest
+
 RUN apt update && apt upgrade -y
 RUN apt install -y unbound
 
