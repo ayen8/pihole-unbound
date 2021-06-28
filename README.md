@@ -5,7 +5,7 @@
 
 This Docker runs Pi-hole and Unbound in a single container.
 
-This is mostly to free up port 80/443 in the host for later use.
+This is mostly to free up port 80/443 in the Host for later use.
 
 
 ## Prerequisites
