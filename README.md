@@ -18,6 +18,8 @@ If you have the same setup then this may be helpful.
 
 2. Free up port 53.
 
+Googled for my case and found below.
+
 [Ubuntu: How To Free Up Port 53, Used By systemd-resolved](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
 
 My `/etc/systemd/resolved.conf` is:
