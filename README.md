@@ -125,8 +125,8 @@ docker-compose up -d
 
 ### Step 5: Test your installation
 
-Update your DNS settings to point to <ServerIP>.
+Update your DNS settings to point to ServerIP.
 
-Check Pi-hole by going to http://<ServerIP>:<Chosen Port>/admin
+Check Pi-hole by going to http://ServerIP:YourPort/admin
 
 Test various websites to see if ads are removed.
